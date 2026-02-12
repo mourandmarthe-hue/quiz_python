@@ -2,5 +2,6 @@
 from.question import Question
 from.quiz import Quiz
 from.storage import Storage
+from.player import Player
 
-__all__ = ["Question", "Quiz", "Storage"]
+__all__ = ["Question", "Quiz", "Storage", "Player"]

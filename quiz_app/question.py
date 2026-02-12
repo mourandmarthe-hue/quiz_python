@@ -62,9 +62,6 @@ class Question:
             "bonne_reponse": self.bonne_reponse
         }
 
-@classmethod #la méthode appartient à la classe et non à une instance, la première variable est cls qui représente la classe, ici Question
-    
-
-
-
-
+    @classmethod
+    #la méthode appartient à la classe et non à une instance, la première variable est cls qui représente la classe, ici Question
+    def from_dict(cls, data):

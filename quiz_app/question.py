@@ -50,6 +50,18 @@ class Question:
         else:
             #sinon, il faut comparer les deux strings
             return reponse_utilisateur == self.bonne_reponse
+    
+    def score_utilisateur(self, reponse_utilisateur):
+        """
+        Permet de calculer le score partiel : combien de points l'utilisateur gagne, même si sa réponse est partiellement correcte.
+        S'il s'agit d'un QCM simple : 1 si la réponse est la bonne, 0 sinon.
+        S'il s'agit d'un QCM multiple : score est le nombre de réponses correctes choisies.
+        """
+        # QCM multiple :
+        if isinstance(self.bonne_reponse, list):
+            return len(set(reponse_utilisateur) & set(self.bonne_reponse)) # nombre de réponses correctes choisies par l'utilisateur
+        else: # QCM simple
+            return int(reponse_utilisateur == self.bonne_reponse)      
         
     def to_dict(self):
         """

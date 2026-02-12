@@ -10,7 +10,7 @@ class Question:
         self.enonce = enonce
         self.options = options
         self.bonne_reponse = bonne_reponse
-    
+        
     def poser(self):
         """
         Permet d'afficher la question à l'utilisateur, ainsi que les options.
@@ -65,3 +65,13 @@ class Question:
     @classmethod
     #la méthode appartient à la classe et non à une instance, la première variable est cls qui représente la classe, ici Question
     def from_dict(cls, data):
+        """
+        Permet de créer une instance Question à partir, donc, d'un dictionnaire (JSON)
+        data : dict qui contient les clés "enonce", "options" et "bonne_reponse"
+        retourne : Question
+        """
+        return cls(
+            enonce = data["enonce"],
+            options = data["options"],
+            bonne_reponse = data["bonne_reponse"]
+        )

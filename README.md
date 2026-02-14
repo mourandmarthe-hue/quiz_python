@@ -5,7 +5,7 @@
 Le projet permet de créer, lancer, gérer des quiz, qui sont interactifs, et permet de gérer des joueurs, et stocker, recharger des résultats.
 
 Le projet utilise :
-- 'rich' pour des affichages sous forme de tableaus, colorés, davantage interactifs
+- 'rich' pour des affichages sous forme de tableaux, colorés, davantage interactifs
 - 'pandas' pour illustrer des questions numériques et afficher des tableaux
 
 ## Structure du projet

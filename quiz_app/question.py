@@ -1,3 +1,7 @@
+from rich.console import Console
+from rich.table import Table
+console = Console()
+
 class Question:
     def __init__(self, enonce, options, bonne_reponse):
         """
@@ -15,14 +19,23 @@ class Question:
         """
         Permet d'afficher la question à l'utilisateur, ainsi que les options.
         Récupère ensuite les réponses sous forme de str ou list[str]
+        Utilisation de la librairie rich pour que les questions s'affichent sous forme de tableau.
         """
         #Affiche l'énoncé de la question
-        print("\n" + self.enonce)
+        console.print(f"\n[bold cyan]{self.enonce}[/bold cyan]\n")
 
-        #Affiche les options, numérotées
+        #Affiche les options, numérotées + création d'un tableau pour les afficher
+        table = Table(title="Options")
+        table.add_column("Numéro", style="cyan", justify="center")
+        table.add_column("Réponse(s)", style="magenta")
+
+        #On ajoute les lignes du tableau
         for i, option in enumerate(self.options, 1):
-            print(f"{i}. {option}")
-        
+            table.add_row(str(i), option)
+
+        #Affiche le tableau
+        console.print(table)
+
         #Récupère la réponse de l'utilisateur, les numéros séparés par des virgules si plusieurs choix
         reponse = input("Votre réponse (chaque numéro séparé par une virgule si plusieurs choix) :")
 

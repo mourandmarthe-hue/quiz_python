@@ -1,4 +1,6 @@
 from quiz_app.question import Question
+from rich.console import Console
+console = Console()
 
 class Quiz:
     """
@@ -28,13 +30,13 @@ class Quiz:
         Enfin, à la fin on affiche le score total (chque réponse correcte rapporte 1 point)
         return : int, soit le score total
         """
-        print(f"\n== QUIZ : {self.titre} ==\n") # on affiche le titre
+        console.print(f"\n[bold blue]~~~ QUIZ : {self.titre} ~~~[/bold blue]\n") # on affiche le titre
         score = 0 # on initialise le score à 0
         max_score = self.score_max() # le score max possible
 
         # On parcourt toutes les questions du quiz, avec un compteur (boucle for avec enumerate)
         for i, question in enumerate(self.questions, 1):
-            print(f"\nQuestion {i}/{len(self.questions)}") # permet d'afficher le numéro de la question et le nombre total de questions posées
+            console.print(f"\nQuestion {i}/{len(self.questions)}") # permet d'afficher le numéro de la question et le nombre total de questions posées
 
             # On pose la question à l'utilisateur avant de récupérer sa réponse (avec la méthode poser de Question)
             reponse = question.poser()
@@ -44,15 +46,15 @@ class Quiz:
             score += points
 
             if points == 0:
-                print (f"Faux... La bonne réponse est : {question.bonne_reponse}")
+                console.print (f"[bold red]Faux... La bonne réponse est : {question.bonne_reponse}[/bold red]")
             elif isinstance(question.bonne_reponse, list) and points < len(question.bonne_reponse):
-                print (f"Partiellement correct. Score : (+{points} point{'s' if points > 1 else ''})")
+                console.print (f"[bold yellow]Partiellement correct. Score : (+{points} point{'s' if points > 1 else ''})[/bold yellow]")
             else:
-                print (f"Correct ! Score : (+{points} point{'s' if points > 1 else ''})")
+                console.print (f"[bold green]Correct ! Score : (+{points} point{'s' if points > 1 else ''})[/bold green]")
             
-            print ("-"*40) # permet d'afficher une ligne de tirets, pour faire plus propre
+            console.print ("-"*40) # permet d'afficher une ligne de tirets, pour faire plus propre
 
-        print (f"\n Score final : {score} / {max_score()}")
+        console.print (f"\n[bold magenta] Score final : {score} / {max_score}[/bold magenta]")
         return score
     
     def score_max(self):
@@ -62,7 +64,7 @@ class Quiz:
         """
         total = 0
         for q in self.questions:
-            if isinstance((q.bonne_reponse, list)):
+            if isinstance(q.bonne_reponse, list):
                 total += len(q.bonne_reponse)
             else:
                 total += 1

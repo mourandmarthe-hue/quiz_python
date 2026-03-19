@@ -1,9 +1,10 @@
 from rich.console import Console
 from rich.table import Table
 console = Console()
+import pandas as pd 
 
 class Question:
-    def __init__(self, enonce, options, bonne_reponse):
+    def __init__(self, enonce, options, bonne_reponse, data=None):
         """
         Permet d'initialiser une question (QCM)
         Comme arguments :
@@ -14,13 +15,20 @@ class Question:
         self.enonce = enonce
         self.options = options
         self.bonne_reponse = bonne_reponse
-        
+        self.data = data 
+
     def poser(self):
         """
         Permet d'afficher la question à l'utilisateur, ainsi que les options.
         Récupère ensuite les réponses sous forme de str ou list[str]
         Utilisation de la librairie rich pour que les questions s'affichent sous forme de tableau.
         """
+        #Si la question contient des données
+        if self.data:
+            df = pd.DataFrame(self.data)
+            print("\n Données :")
+            print(df.to_string(index=False))
+
         #Affiche l'énoncé de la question
         console.print(f"\n[bold cyan]{self.enonce}[/bold cyan]\n")
 
@@ -49,11 +57,12 @@ class Question:
             else:
                 reponses_utilisateur.append(self.options[int(x) - 1])
         
-        #Boucle : si une seule bonne réponse, return str, else return list[str] (vérification du type de l'object avec isinstance)
+        #Si une seule bonne réponse, return str, else return list[str] (vérification du type de l'object avec isinstance)
         if isinstance(self.bonne_reponse, str):
             return reponses_utilisateur[0] #retourne la première (donc seule) réponse choisie
         else :
             return reponses_utilisateur #retourne la liste des réponses choisies
+        
         
     def verifier_reponse(self, reponse_utilisateur):
         """ 
@@ -109,5 +118,6 @@ class Question:
         return cls(
             enonce = data["enonce"],
             options = data["options"],
-            bonne_reponse = data["bonne_reponse"]
+            bonne_reponse = data["bonne_reponse"],
+            data=data.get("data")
         )

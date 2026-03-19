@@ -8,10 +8,10 @@ def menu():
     print("\n=== Menu Quiz ===") 
     print("1. Créer un nouveau quiz") 
     print("2. Charger un quiz") 
-    print("3. Lancer un quiz") 
-    print("4. Créer / Charger un joueur") 
+    print("3. Lancer le quiz") 
+    print("4. Créer un joueur") 
     print("5. Sauvegarder le joueur") 
-    print("6. Charger le joueur") 
+    print("6. Charger le joueur")
     print("7. Quitter") 
     choix = input("Votre choix : ") 
     return choix 
@@ -45,7 +45,7 @@ def main():
             fichier = input("Nom du fichier à charger : ") 
             quiz = Storage.charger_quiz(fichier)   
         elif choix == "3": 
-            if quiz: 
+            if quiz:
                 score = quiz.lancer() 
                 if joueur: 
                     joueur.enregistrer_score(quiz, score) 

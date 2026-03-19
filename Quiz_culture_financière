@@ -179,7 +179,7 @@
         "C. Le prix futur dun actif",
         "D. La volatilité historique"
       ],
-      "bonne_reponse": "La perte maximale possible à un certain niveau de confiance"
+      "bonne_reponse": "B"
     },
     {
       "enonce": "Dans le modèle de portefeuille de Harry Markowitz, l’objectif est de :",
@@ -194,12 +194,25 @@
     {
       "enonce": "Quel est le payoff d’un call option à maturité ?",
       "options": [
-        "A. max(K − S",
-        "0)",
-        "B. max(S − K",
-        "0)",
+        "A. max(K − S,0)",
+        "B. max(S − K,0)",
         "C. S − K",
         "D. K − S"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "On considère le portefeuille suivant. Quel est le rendement moyen du portefeuille ?",
+      "data": {
+        "Actif": ["Action A", "Action B", "Obligation C"],
+        "Poids (%)": [0.3, 0.4, 0.3],
+        "Rendement (%)": [5, 6, 4]
+      },
+      "options": [
+        "A. 4%",
+        "B. 5%",
+        "C. 6%",
+        "D. 7%"
       ],
       "bonne_reponse": "B"
     }

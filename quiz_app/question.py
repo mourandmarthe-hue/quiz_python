@@ -39,11 +39,15 @@ class Question:
         #Récupère la réponse de l'utilisateur, les numéros séparés par des virgules si plusieurs choix
         reponse = input("Votre réponse (chaque numéro séparé par une virgule si plusieurs choix) :")
 
-        #Pour convertir les numéros donnés en indices (0-based) afin de récupérer les options qui correspondent (comme l'utilisateur tape un numéro, pas le texte exact de la réponse)
-        indices = [int(x.strip()) - 1 for x in reponse.split(",")]
+        lettre_vers_index = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4}
 
-        #Récupère donc les réponses correspondantes, choisies par l'utilisateur
-        reponses_utilisateur = [self.options[i] for i in indices]
+        reponses_utilisateur = []
+        for x in reponse.split(","):
+            x = x.strip().upper()
+            if x in lettre_vers_index:
+                reponses_utilisateur.append(self.options[lettre_vers_index[x]])
+            else:
+                reponses_utilisateur.append(self.options[int(x) - 1])
         
         #Boucle : si une seule bonne réponse, return str, else return list[str] (vérification du type de l'object avec isinstance)
         if isinstance(self.bonne_reponse, str):
@@ -57,12 +61,15 @@ class Question:
         reponse_utilisateur : str ou list[str], réponse donnée par l'utilisateur
         booléen : retourne True si la réponse est bonne, False sinon
         """
+        def extraire_lettre(option):
+            return option.split(".")[0].strip()
         #Si la bonne réponse est sous forme de liste, il faut comparer, comme des ensembles, les réponses données (fonction : set())
         if isinstance(self.bonne_reponse, list):
-            return set(reponse_utilisateur) == set(self.bonne_reponse)
+            reponses_lettres = [extraire_lettre(r) for r in reponse_utilisateur]
+            return set(reponses_lettres) == set(self.bonne_reponse)
         else:
             #sinon, il faut comparer les deux strings
-            return reponse_utilisateur == self.bonne_reponse
+            return extraire_lettre(reponse_utilisateur) == self.bonne_reponse
     
     def score_utilisateur(self, reponse_utilisateur):
         """
@@ -70,11 +77,15 @@ class Question:
         S'il s'agit d'un QCM simple : 1 si la réponse est la bonne, 0 sinon.
         S'il s'agit d'un QCM multiple : score est le nombre de réponses correctes choisies.
         """
+        def extraire_lettre(option):
+            return option.split(".")[0].strip()
+        
         # QCM multiple :
         if isinstance(self.bonne_reponse, list):
-            return len(set(reponse_utilisateur) & set(self.bonne_reponse)) # nombre de réponses correctes choisies par l'utilisateur
+            reponses_lettres = [extraire_lettre(r) for r in reponse_utilisateur]
+            return len(set(reponses_lettres) & set(self.bonne_reponse)) # nombre de réponses correctes choisies par l'utilisateur
         else: # QCM simple
-            return int(reponse_utilisateur == self.bonne_reponse)      
+            return int(extraire_lettre(reponse_utilisateur) == self.bonne_reponse)      
         
     def to_dict(self):
         """

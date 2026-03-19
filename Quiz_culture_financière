@@ -1,0 +1,207 @@
+{
+  "titre": "Marchés, risques et arbitrage : testez vos connaissances",
+  "questions": [
+    {
+      "enonce": "Quel produit dérivé donne le droit mais pas l’obligation d’acheter un actif à un prix fixé à l’avance ?",
+      "options": [
+        "A. Future",
+        "B. Option call",
+        "C. Swap",
+        "D. Forward"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Quel produit dérivé donne le droit de vendre un actif à un prix fixé à l’avance ?",
+      "options": [
+        "A. Option put",
+        "B. Future",
+        "C. Swap",
+        "D. ETF"
+      ],
+      "bonne_reponse": "A"
+    },
+    {
+      "enonce": "Dans le modèle de portefeuille de Harry Markowitz, l’objectif est de :",
+      "options": [
+        "A. Maximiser uniquement le rendement",
+        "B. Minimiser uniquement le risque",
+        "C. Optimiser le couple rendement / risque",
+        "D. Minimiser les impôts"
+      ],
+      "bonne_reponse": "C"
+    },
+    {
+      "enonce": "Que signifie strike price dans une option ?",
+      "options": [
+        "A. Prix de marché",
+        "B. Prix d’exercice",
+        "C. Prime de l’option",
+        "D. Prix futur"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Une option est dans la monnaie (in the money) lorsqu’elle :",
+      "options": [
+        "A. N’a aucune valeur",
+        "B. Peut être exercée avec profit",
+        "C. Expire bientôt",
+        "D. Est très volatile"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Quel dérivé oblige les deux parties à acheter ou vendre l’actif à maturité ?",
+      "options": [
+        "A. Option",
+        "B. Future",
+        "C. ETF",
+        "D. CDO"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Quelle variable influence le plus fortement le prix d’une option ?",
+      "options": [
+        "A. Le taux de change",
+        "B. La volatilité de l’actif",
+        "C. Le nombre d’actions",
+        "D. Les dividendes passés"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Que mesure le Delta d’une option ?",
+      "options": [
+        "A. La sensibilité du prix de l’option au prix du sous-jacent",
+        "B. Le risque de faillite",
+        "C. Le rendement attendu",
+        "D. La volatilité historique"
+      ],
+      "bonne_reponse": "A"
+    },
+    {
+      "enonce": "Quel produit dérivé permet d’échanger des flux financiers entre deux parties ?",
+      "options": [
+        "A. Swap",
+        "B. Future",
+        "C. Option",
+        "D. Warrant"
+      ],
+      "bonne_reponse": "A"
+    },
+    {
+      "enonce": "Dans un interest rate swap, les deux parties échangent généralement :",
+      "options": [
+        "A. Actions contre obligations",
+        "B. Taux fixe contre taux variable",
+        "C. Monnaies différentes",
+        "D. Actions contre futures"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Quel est l’objectif principal d’utiliser des produits dérivés ?",
+      "options": [
+        "A. Décorer les bilans",
+        "B. Couvrir un risque financier",
+        "C. Créer de l’inflation",
+        "D. Réduire les impôts"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Une option européenne peut être exercée :",
+      "options": [
+        "A. À tout moment",
+        "B. Uniquement à maturité",
+        "C. Après un an",
+        "D. Avant la maturité seulement"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Une option américaine peut être exercée :",
+      "options": [
+        "A. Seulement à maturité",
+        "B. À tout moment avant la maturité",
+        "C. Après 6 mois",
+        "D. Après la moitié du contrat"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Quand la volatilité augmente, le prix d’une option :",
+      "options": [
+        "A. Diminue",
+        "B. Reste identique",
+        "C. Augmente",
+        "D. Devient nul"
+      ],
+      "bonne_reponse": "C"
+    },
+    {
+      "enonce": "Quel indicateur mesure la sensibilité du delta à la variation du prix du sous-jacent ?",
+      "options": [
+        "A. Gamma",
+        "B. Vega",
+        "C. Theta",
+        "D. Rho"
+      ],
+      "bonne_reponse": "A"
+    },
+    {
+      "enonce": "Que mesure Theta ?",
+      "options": [
+        "A. La sensibilité au temps",
+        "B. La sensibilité aux taux d’intérêt",
+        "C. La volatilité",
+        "D. Le rendement"
+      ],
+      "bonne_reponse": "A"
+    },
+    {
+      "enonce": "Pourquoi les investisseurs utilisent-ils des futures sur matières premières ?",
+      "options": [
+        "A. Pour réduire la volatilité des banques",
+        "B. Pour spéculer ou couvrir les prix futurs",
+        "C. Pour payer moins d’impôts",
+        "D. Pour augmenter les dividendes"
+      ],
+      "bonne_reponse": "B"
+    },
+    {
+      "enonce": "Que mesure la Value at Risk (VaR) ?",
+      "options":[
+        "A. Le rendement moyen",
+        "B. La perte maximale possible à un certain niveau de confiance",
+        "C. Le prix futur dun actif",
+        "D. La volatilité historique"
+      ],
+      "bonne_reponse": "La perte maximale possible à un certain niveau de confiance"
+    },
+    {
+      "enonce": "Dans le modèle de portefeuille de Harry Markowitz, l’objectif est de :",
+      "options": [
+        "A. Maximiser uniquement le rendement",
+        "B. Minimiser uniquement le risque",
+        "C. Optimiser le couple rendement / risque",
+        "D. Minimiser les impôts"
+      ],
+      "bonne_reponse": "C"
+    },
+    {
+      "enonce": "Quel est le payoff d’un call option à maturité ?",
+      "options": [
+        "A. max(K − S",
+        "0)",
+        "B. max(S − K",
+        "0)",
+        "C. S − K",
+        "D. K − S"
+      ],
+      "bonne_reponse": "B"
+    }
+  ]
+}

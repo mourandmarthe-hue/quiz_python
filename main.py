@@ -69,3 +69,7 @@ def main():
             break
         else: 
             print("Choix invalide.") 
+
+if __name__ == "__main__":
+    main()
+    

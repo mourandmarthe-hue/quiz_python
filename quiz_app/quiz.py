@@ -74,7 +74,7 @@ class Quiz:
         """Pour sérialiser le quiz, afin de le sauvegarder sous forme de fichier JSON"""
         return {
             "titre" : self.titre,
-            "questions" : [q.to_dict() for q in self.question]
+            "questions" : [q.to_dict() for q in self.questions]
         }
     
     @classmethod

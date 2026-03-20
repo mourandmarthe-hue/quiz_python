@@ -51,8 +51,8 @@ Lancer le projet :
 
 - Créer un nouveau quiz
 - Charger un quiz pré-existant
-- Lancer un quiz
-- Créer ou charger un joueur
+- Lancer le quiz
+- Créer un joueur
 - Sauvegarder le joueur
 - Charger le joueur
 - Quitter
@@ -60,6 +60,10 @@ Lancer le projet :
 Quand un quiz est lancé, les options de réponses aux questions s'affichent dans un tableau, avec rich. Les bonnes réponses sont en vert, celles partiellement correctes en jaune et celles fausses en rouge.
 Il est également possible de sauvegarder les résultats d'un joueur pour les recharger plus tard.
 Pour les questions numériques, un petit tableau peut s'afficher, avec pandas, pour par exemple illustrer les réponses ou résultats.
+
+## Quiz test
+
+Le quiz "Quizz_culture_financière" est un quiz que nous avons créé afin de tester le code. Les fichiers "Quiz Charlotte", "Quiz Elena", "Quizz Thomas" sont les données de joueurs et joueuses après avoir réalisé le quiz de test.
 
 ## Avec Git
 
